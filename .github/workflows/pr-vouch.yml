@@ -80,7 +80,7 @@ jobs:
     steps:
       - id: vouch
         name: Check PR author trust
-        uses: mitchellh/vouch/action/check-user@f44860978966ace98fb11aaaa20f2b27d7543e13 # v1
+        uses: mitchellh/vouch/action/check-user@c6d80ead49839655b61b422700b7a3bc9d0804a9 # v1
         with:
           user: ${{ matrix.target.user }}
           allow-fail: true
