@@ -1,0 +1,35 @@
+[
+  {
+    "name": "Starter",
+    "amount": "30k",
+    "currency": "USD",
+    "duration": "month",
+    "description": "Ideal for small teams getting started — essential features to launch quickly.",
+    "benefits": [
+      "Up to 20 users.",
+      "Free storage upto 1GB",
+      "Lifetime validity"
+    ]
+  },
+  {
+    "name": "Professional",
+    "amount": "120k",
+    "currency": "USD",
+    "duration": "month",
+    "description": "For growing teams that need scalability, advanced integrations, and priority support.",
+    "benefits": ["Up to 500 users.", "Storage upto 50GB", "24*7 support"]
+  },
+  {
+    "name": "Enterprise",
+    "amount": "350k",
+    "currency": "USD",
+    "duration": "month",
+    "description": "Comprehensive plan for large organizations with enhanced security and SLAs.",
+    "benefits": [
+      "Up to 1000 users.",
+      "Storage upto 100GB",
+      "24*7 support",
+      "Data backups"
+    ]
+  }
+]

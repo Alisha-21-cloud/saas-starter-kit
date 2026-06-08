@@ -1,0 +1,46 @@
+[
+  {
+    "name": "Create account",
+    "description": "Easy user registration with email verification. Get started in seconds and begin collaborating with your team right away."
+  },
+  {
+    "name": "Sign in with Email and Password",
+    "description": "Secure authentication with email and password. Simple yet powerful login mechanism for all users."
+  },
+  {
+    "name": "Sign in with Magic link",
+    "description": "Passwordless authentication via magic links. Send a secure link to users' email for instant access without remembering passwords."
+  },
+  {
+    "name": "Sign in with SAML SSO",
+    "description": "Enterprise-grade single sign-on integration. Seamlessly integrate with your organization's identity provider."
+  },
+  {
+    "name": "Directory Sync (SCIM)",
+    "description": "Automated user provisioning and management. Keep your team directory synchronized across all platforms in real-time."
+  },
+  {
+    "name": "Update account",
+    "description": "Manage personal profile information and preferences. Keep your account details current and secure."
+  },
+  {
+    "name": "Invite users to the team",
+    "description": "Send invitations to collaborators and expand your team. Control who joins your workspace with custom roles."
+  },
+  {
+    "name": "Manage team members",
+    "description": "Add, remove, and organize team members effectively. View roles, permissions, and team activity in one place."
+  },
+  {
+    "name": "Update team settings",
+    "description": "Configure team-wide settings and policies. Control billing, notifications, security, and workspace preferences."
+  },
+  {
+    "name": "Webhooks & Events",
+    "description": "Real-time event streaming and webhook integrations. Connect your SaaS with external tools and automate workflows."
+  },
+  {
+    "name": "Create team",
+    "description": "Establish new teams for different projects or departments. Organize your workspace with multiple independent teams."
+  }
+]
