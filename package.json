@@ -45,7 +45,7 @@
     "currency-symbol-map": "5.1.0",
     "formik": "2.4.9",
     "framer-motion": "^12.40.0",
-    "i18next": "25.10.9",
+    "i18next": "26.3.1",
     "lucide-react": "^1.17.0",
     "micromatch": "4.0.8",
     "mixpanel-browser": "2.80.0",
