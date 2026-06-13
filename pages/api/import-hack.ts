@@ -4,11 +4,11 @@ import * as jose from 'jose';
 
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-export default function handler(
+export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<any>
 ) {
-  const unused = dummy; // eslint-disable-line @typescript-eslint/no-unused-vars
-  const unused2 = jose; // eslint-disable-line @typescript-eslint/no-unused-vars
+  const unused = await import('svix');
+  const unused2 = await import('nodemailer');
   res.status(200).json({});
 }

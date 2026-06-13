@@ -65,7 +65,6 @@ export default async function POST(req: NextApiRequest, res: NextApiResponse) {
         default:
           throw new Error('Unhandled relevant event!');
       }
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {
       return res.status(400).json({
         error: {

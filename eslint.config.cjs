@@ -62,6 +62,13 @@ module.exports = [{
     files: [
         "components/defaultLanding/**/*.tsx",
         "components/emailTemplates/**/*.tsx",
+        "components/*Section.tsx",
+        "components/Footer.tsx",
+        "components/HeroSection.tsx",
+        "components/Navbar.tsx",
+        "components/SetupStepsSection.tsx",
+        "components/StarterKitCard.tsx",
+        "components/TechStackSection.tsx",
         "pages/index.tsx",
     ],
 

@@ -22,6 +22,26 @@ const UploadAvatar = ({ user }: { user: Partial<User> }) => {
     );
   }, [user]);
 
+  function onAvatarUpload(file: File) {
+    if (file.size / 1024 / 1024 > 2) {
+      toast.error('File size too big (max 2MB)');
+      return;
+    }
+
+    if (file.type !== 'image/png' && file.type !== 'image/jpeg') {
+      toast.error('File type not supported (.png or .jpg only)');
+      return;
+    }
+
+    const reader = new FileReader();
+
+    reader.onload = (e) => {
+      setImage(e.target?.result as string);
+    };
+
+    reader.readAsDataURL(file);
+  }
+
   const onDrop = (e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault();
     e.stopPropagation();
@@ -41,26 +61,6 @@ const UploadAvatar = ({ user }: { user: Partial<User> }) => {
       onAvatarUpload(file);
     }
   }, []);
-
-  const onAvatarUpload = (file: File) => {
-    if (file.size / 1024 / 1024 > 2) {
-      toast.error('File size too big (max 2MB)');
-      return;
-    }
-
-    if (file.type !== 'image/png' && file.type !== 'image/jpeg') {
-      toast.error('File type not supported (.png or .jpg only)');
-      return;
-    }
-
-    const reader = new FileReader();
-
-    reader.onload = (e) => {
-      setImage(e.target?.result as string);
-    };
-
-    reader.readAsDataURL(file);
-  };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
