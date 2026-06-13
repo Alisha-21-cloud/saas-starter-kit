@@ -37,7 +37,7 @@ export class SSOPage {
     public readonly teamSlug: string
   ) {
     this.pageHeader = this.page.getByRole('heading', {
-      name: 'Manage SSO Connections',
+      name: 'Manage SSO',
     });
     this.newConnectionButton = this.page.getByRole('button', {
       name: 'New Connection',
@@ -259,7 +259,7 @@ export class SSOPage {
     await this.confirmButton.click();
     await expect(
       this.page.getByRole('heading', {
-        name: 'Manage SSO Connections',
+        name: 'Manage SSO',
       })
     ).toBeVisible();
   }
