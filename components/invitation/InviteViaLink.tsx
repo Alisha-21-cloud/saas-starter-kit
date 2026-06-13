@@ -4,7 +4,7 @@ import { useFormik } from 'formik';
 import toast from 'react-hot-toast';
 import React, { useState } from 'react';
 import { Button, Input } from 'react-daisyui';
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from 'next-i18next/pages';
 
 import type { ApiResponse } from 'types';
 import useInvitations from 'hooks/useInvitations';

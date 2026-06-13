@@ -5,7 +5,7 @@ import {
   passwordPolicies,
 } from '@/lib/common';
 import { useFormik } from 'formik';
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from 'next-i18next/pages';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { Button } from 'react-daisyui';

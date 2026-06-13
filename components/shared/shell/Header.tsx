@@ -10,7 +10,7 @@ import {
 import { ChevronDownIcon } from '@heroicons/react/20/solid';
 import useTheme from 'hooks/useTheme';
 import env from '@/lib/env';
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from 'next-i18next/pages';
 import { useCustomSignOut } from 'hooks/useCustomSignout';
 
 interface HeaderProps {

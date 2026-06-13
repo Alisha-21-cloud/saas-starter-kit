@@ -2,7 +2,7 @@ import { useState, useRef } from 'react';
 import { InputWithLabel } from '@/components/shared';
 import { defaultHeaders, passwordPolicies } from '@/lib/common';
 import { useFormik } from 'formik';
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from 'next-i18next/pages';
 import { useRouter } from 'next/router';
 import { Button } from 'react-daisyui';
 import toast from 'react-hot-toast';

@@ -1,7 +1,15 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { Sparkles } from 'lucide-react';
-import { githubUrl, contributingUrl, licenseUrl, codeOfConductUrl, vercelUrl, herokuUrl, digitalOceanUrl } from '@/lib/constants';
+import {
+  githubUrl,
+  contributingUrl,
+  licenseUrl,
+  codeOfConductUrl,
+  vercelUrl,
+  herokuUrl,
+  digitalOceanUrl,
+} from '@/lib/constants';
 
 export default function Footer() {
   return (
@@ -24,7 +32,8 @@ export default function Footer() {
               </span>
             </Link>
             <p className="mt-4 max-w-sm text-sm leading-6 text-theme-text-secondary">
-              The Open Source Next.js SaaS boilerplate for Enterprise SaaS app development.
+              The Open Source Next.js SaaS boilerplate for Enterprise SaaS app
+              development.
             </p>
           </div>
 
@@ -33,10 +42,29 @@ export default function Footer() {
               Product
             </h3>
             <ul className="mt-4 space-y-3 text-sm text-theme-text-secondary">
-              <li><Link href="#features" className="hover:text-theme-text-primary transition-colors">Features</Link></li>
-              <li><Link href="#getting-started" className="hover:text-theme-text-primary transition-colors">Getting started</Link></li>
               <li>
-                <a href={githubUrl} target="_blank" rel="noreferrer" className="hover:text-theme-text-primary transition-colors">
+                <Link
+                  href="#features"
+                  className="hover:text-theme-text-primary transition-colors"
+                >
+                  Features
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#getting-started"
+                  className="hover:text-theme-text-primary transition-colors"
+                >
+                  Getting started
+                </Link>
+              </li>
+              <li>
+                <a
+                  href={githubUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hover:text-theme-text-primary transition-colors"
+                >
                   GitHub
                 </a>
               </li>
@@ -49,22 +77,42 @@ export default function Footer() {
             </h3>
             <ul className="mt-4 space-y-3 text-sm text-theme-text-secondary">
               <li>
-                <a href={vercelUrl} target="_blank" rel="noreferrer" className="hover:text-theme-text-primary transition-colors">
+                <a
+                  href={vercelUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hover:text-theme-text-primary transition-colors"
+                >
                   Vercel deploy
                 </a>
               </li>
               <li>
-                <a href={herokuUrl} target="_blank" rel="noreferrer" className="hover:text-theme-text-primary transition-colors">
+                <a
+                  href={herokuUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hover:text-theme-text-primary transition-colors"
+                >
                   Heroku deploy
                 </a>
               </li>
               <li>
-                <a href={digitalOceanUrl} target="_blank" rel="noreferrer" className="hover:text-theme-text-primary transition-colors">
+                <a
+                  href={digitalOceanUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hover:text-theme-text-primary transition-colors"
+                >
                   DigitalOcean deploy
                 </a>
               </li>
               <li>
-                <a href={contributingUrl} target="_blank" rel="noreferrer" className="hover:text-theme-text-primary transition-colors">
+                <a
+                  href={contributingUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hover:text-theme-text-primary transition-colors"
+                >
                   Contributing guide
                 </a>
               </li>
@@ -77,12 +125,22 @@ export default function Footer() {
             </h3>
             <ul className="mt-4 space-y-3 text-sm text-theme-text-secondary">
               <li>
-                <a href={licenseUrl} target="_blank" rel="noreferrer" className="hover:text-theme-text-primary transition-colors">
+                <a
+                  href={licenseUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hover:text-theme-text-primary transition-colors"
+                >
                   License
                 </a>
               </li>
               <li>
-                <a href={codeOfConductUrl} target="_blank" rel="noreferrer" className="hover:text-theme-text-primary transition-colors">
+                <a
+                  href={codeOfConductUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hover:text-theme-text-primary transition-colors"
+                >
                   Code of conduct
                 </a>
               </li>
@@ -91,7 +149,8 @@ export default function Footer() {
         </motion.div>
 
         <div className="mt-12 border-t border-theme-border pt-6 text-sm text-theme-text-muted">
-          © {new Date().getFullYear()} Enterprise SaaS Starter Kit. All rights reserved.
+          © {new Date().getFullYear()} Enterprise SaaS Starter Kit. All rights
+          reserved.
         </div>
       </div>
     </footer>

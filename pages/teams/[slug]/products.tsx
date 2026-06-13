@@ -1,7 +1,7 @@
 import { GetServerSidePropsContext } from 'next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { serverSideTranslations } from 'next-i18next/pages/serverSideTranslations';
 import type { NextPageWithLayout } from 'types';
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from 'next-i18next/pages';
 
 const Products: NextPageWithLayout = () => {
   const { t } = useTranslation('common');

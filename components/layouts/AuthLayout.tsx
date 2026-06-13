@@ -1,5 +1,5 @@
 import app from '@/lib/app';
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from 'next-i18next/pages';
 import Image from 'next/image';
 
 interface AuthLayoutProps {

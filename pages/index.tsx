@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { GetServerSidePropsContext } from 'next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { serverSideTranslations } from 'next-i18next/pages/serverSideTranslations';
 import { type ReactElement } from 'react';
 
 import env from '@/lib/env';

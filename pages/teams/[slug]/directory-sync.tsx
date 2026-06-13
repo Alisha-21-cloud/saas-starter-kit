@@ -2,11 +2,19 @@ import { Error, Loading } from '@/components/shared';
 import { TeamTab } from '@/components/team';
 import useTeam from 'hooks/useTeam';
 import { GetServerSidePropsContext } from 'next';
-import { useTranslation } from 'next-i18next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next/pages';
+import { serverSideTranslations } from 'next-i18next/pages/serverSideTranslations';
 import { toast } from 'react-hot-toast';
 import env from '@/lib/env';
-import { DirectoriesWrapper } from '@boxyhq/react-ui/dsync';
+import dynamic from 'next/dynamic';
+
+// TODO: Remove ssr:false when @boxyhq/react-ui ships React 19 SSR support
+// Last checked: 2026-06-13, version 3.5.3
+// Functional impact: SSO and Directory Sync wrappers render client-side only
+const DirectoriesWrapper = dynamic(
+  () => import('@boxyhq/react-ui/dsync').then((mod) => mod.DirectoriesWrapper),
+  { ssr: false }
+);
 import { BOXYHQ_UI_CSS } from '@/components/styles';
 
 const DirectorySync = ({ teamFeatures }) => {

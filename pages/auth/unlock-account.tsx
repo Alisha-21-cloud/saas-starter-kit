@@ -1,8 +1,7 @@
 import { Button } from 'react-daisyui';
 import type { GetServerSidePropsContext } from 'next';
 import { useState, type ReactElement, useEffect } from 'react';
-import type { ComponentStatus } from 'react-daisyui/dist/types';
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from 'next-i18next/pages';
 
 import {
   deleteVerificationToken,
@@ -24,7 +23,7 @@ interface UnlockAccountProps {
 
 interface Message {
   text: string | null;
-  status: ComponentStatus | null;
+  status: 'info' | 'success' | 'warning' | 'error' | null;
 }
 
 const UnlockAccount = ({

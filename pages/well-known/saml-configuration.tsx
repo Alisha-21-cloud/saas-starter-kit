@@ -1,10 +1,11 @@
 import type { InferGetStaticPropsType } from 'next';
 import Link from 'next/link';
 import React, { ReactElement, useEffect } from 'react';
-import { useTranslation, Trans } from 'next-i18next';
+import { useTranslation } from 'next-i18next/pages';
+import { Trans } from 'react-i18next';
 import jackson from '@/lib/jackson';
 import InputWithCopyButton from '@/components/shared/InputWithCopyButton';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { serverSideTranslations } from 'next-i18next/pages/serverSideTranslations';
 import type { NextPageWithLayout } from 'types';
 import env from '@/lib/env';
 
@@ -35,6 +36,7 @@ const SPConfig: NextPageWithLayout<
               {t('sp-saml-config-description')}
             </p>
             <p className="text-sm leading-6 text-gray-600">
+              {/* @ts-expect-error React 19 type mismatch for Trans */}
               <Trans
                 i18nKey="refer-to-provider-instructions"
                 t={t}
@@ -96,6 +98,7 @@ const SPConfig: NextPageWithLayout<
                   {t('assertion-encryption')}
                 </label>
                 <p className="text-sm">
+                  {/* @ts-expect-error React 19 type mismatch for Trans */}
                   <Trans
                     i18nKey="sp-download-our-public-cert"
                     t={t}

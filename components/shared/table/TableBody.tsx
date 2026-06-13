@@ -1,6 +1,6 @@
 import { Button } from 'react-daisyui';
 import Badge from '@/components/shared/Badge';
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from 'next-i18next/pages';
 
 const trClass =
   'border-b bg-white last:border-b-0 hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-800';

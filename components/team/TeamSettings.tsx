@@ -2,7 +2,7 @@ import { Card, InputWithLabel } from '@/components/shared';
 import { defaultHeaders } from '@/lib/common';
 import { Team } from '@prisma/client';
 import { useFormik } from 'formik';
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from 'next-i18next/pages';
 import { useRouter } from 'next/router';
 import React from 'react';
 import { Button } from 'react-daisyui';

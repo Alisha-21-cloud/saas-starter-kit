@@ -2,10 +2,10 @@ import Link from 'next/link';
 import toast from 'react-hot-toast';
 import { useRouter } from 'next/router';
 import { useSession } from 'next-auth/react';
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from 'next-i18next/pages';
 import { GetServerSidePropsContext, InferGetServerSidePropsType } from 'next';
 import { type ReactElement, useEffect } from 'react';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { serverSideTranslations } from 'next-i18next/pages/serverSideTranslations';
 
 import type { NextPageWithLayout } from 'types';
 import { authProviderEnabled } from '@/lib/auth';

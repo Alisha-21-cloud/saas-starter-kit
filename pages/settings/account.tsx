@@ -3,7 +3,7 @@ import type {
   GetServerSidePropsContext,
   InferGetServerSidePropsType,
 } from 'next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { serverSideTranslations } from 'next-i18next/pages/serverSideTranslations';
 
 import { getSession } from '@/lib/session';
 import { getUserBySession } from 'models/user';

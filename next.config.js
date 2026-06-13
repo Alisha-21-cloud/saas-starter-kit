@@ -1,4 +1,3 @@
-/* eslint @typescript-eslint/no-var-requires: "off" */
 const { i18n } = require('./next-i18next.config');
 const { withSentryConfig } = require('@sentry/nextjs');
 
@@ -53,11 +52,13 @@ const nextConfig = {
   },
 };
 
-// Additional config options for the Sentry webpack plugin.
-// For all available options: https://github.com/getsentry/sentry-webpack-plugin#options.
-const sentryWebpackPluginOptions = {
-  silent: true,
+module.exports = withSentryConfig(nextConfig, {
+  org: process.env.SENTRY_ORG,
+  project: process.env.SENTRY_PROJECT,
+  authToken: process.env.SENTRY_AUTH_TOKEN,
+  silent: !process.env.CI,
+  // Disable source map upload locally if you don't have an auth token set
+  disableServerWebpackPlugin: !process.env.SENTRY_AUTH_TOKEN,
+  disableClientWebpackPlugin: !process.env.SENTRY_AUTH_TOKEN,
   hideSourceMaps: true,
-};
-
-module.exports = withSentryConfig(nextConfig, sentryWebpackPluginOptions);
+});

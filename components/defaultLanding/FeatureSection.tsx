@@ -1,4 +1,4 @@
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from 'next-i18next/pages';
 
 import features from './data/features.json';
 
@@ -11,7 +11,8 @@ const FeatureSection = () => {
           {t('features')}
         </h2>
         <p className="text-center text-xl">
-          Features that make our product stand out and provide value to our users.
+          Features that make our product stand out and provide value to our
+          users.
         </p>
         <div className="flex items-center justify-center">
           <div className="grid grid-cols-1 xl:grid-cols-3 md:grid-cols-2 gap-2">

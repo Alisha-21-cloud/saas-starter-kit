@@ -2,7 +2,7 @@ import { defaultHeaders, maxLengthPolicies } from '@/lib/common';
 import type { Team } from '@prisma/client';
 import { useFormik } from 'formik';
 import useTeams from 'hooks/useTeams';
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from 'next-i18next/pages';
 import { useRouter } from 'next/router';
 import React from 'react';
 import { Button } from 'react-daisyui';

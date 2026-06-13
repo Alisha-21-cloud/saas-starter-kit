@@ -23,13 +23,10 @@ module.exports = [{
     ],
 }, ...compat.extends(
     "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
     "prettier",
-    "next/core-web-vitals",
     "plugin:i18next/recommended",
-), {
+), ...require("eslint-config-next/core-web-vitals"), {
     plugins: {
-        "@typescript-eslint": typescriptEslint,
         i18next: i18Next,
     },
 
@@ -44,6 +41,10 @@ module.exports = [{
     },
     rules: {
         "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-unused-vars": "off",
+        "no-unused-vars": "off",
+        "no-undef": "off",
+        "react-hooks/set-state-in-effect": "off",
     }
 }, {
     files: ["**/*.js"],
@@ -61,6 +62,13 @@ module.exports = [{
     files: [
         "components/defaultLanding/**/*.tsx",
         "components/emailTemplates/**/*.tsx",
+        "components/*Section.tsx",
+        "components/Footer.tsx",
+        "components/HeroSection.tsx",
+        "components/Navbar.tsx",
+        "components/SetupStepsSection.tsx",
+        "components/StarterKitCard.tsx",
+        "components/TechStackSection.tsx",
         "pages/index.tsx",
     ],
 

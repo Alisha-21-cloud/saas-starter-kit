@@ -4,7 +4,7 @@ import {
   SunIcon,
 } from '@heroicons/react/24/outline';
 import { useEffect, useState } from 'react';
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from 'next-i18next/pages';
 
 import { ThemesProps, applyTheme } from '@/lib/theme';
 
@@ -37,9 +37,6 @@ const useTheme = () => {
   const selectedTheme = themes.find((t) => t.id === theme) || themes[0];
 
   const toggleTheme = () => {
-    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-    selectedTheme.id === 'light' ? applyTheme('dark') : applyTheme('light');
-
     if (selectedTheme.id === 'light') {
       applyTheme('dark');
       setTheme('dark');

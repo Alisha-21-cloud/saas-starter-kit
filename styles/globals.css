@@ -114,13 +114,23 @@ a {
 }
 
 @keyframes floatY {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-12px); }
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
 }
 
 @keyframes pulseShadow {
-  0%, 100% { box-shadow: var(--shadow-base); }
-  50% { box-shadow: var(--shadow-raised); }
+  0%,
+  100% {
+    box-shadow: var(--shadow-base);
+  }
+  50% {
+    box-shadow: var(--shadow-raised);
+  }
 }
 
 .float-wrapper {
@@ -138,7 +148,8 @@ a {
   transition: transform 0.3s ease;
 }
 
-html.dark .float-card, .dark .float-card {
+html.dark .float-card,
+.dark .float-card {
   --shadow-base: 0 24px 100px rgba(0, 0, 0, 0.35);
   --shadow-raised: 0 34px 110px rgba(0, 0, 0, 0.25);
 }

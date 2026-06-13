@@ -2,7 +2,7 @@ import toast from 'react-hot-toast';
 import { Button } from 'react-daisyui';
 import { useState } from 'react';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from 'next-i18next/pages';
 
 import { Card } from '@/components/shared';
 import { Team } from '@prisma/client';

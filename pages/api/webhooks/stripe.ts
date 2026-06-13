@@ -65,7 +65,6 @@ export default async function POST(req: NextApiRequest, res: NextApiResponse) {
         default:
           throw new Error('Unhandled relevant event!');
       }
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {
       return res.status(400).json({
         error: {
@@ -78,15 +77,14 @@ export default async function POST(req: NextApiRequest, res: NextApiResponse) {
 }
 
 async function handleSubscriptionUpdated(event: Stripe.Event) {
-  const {
-    cancel_at,
-    id,
-    status,
-    current_period_end,
-    current_period_start,
-    customer,
-    items,
-  } = event.data.object as Stripe.Subscription;
+  const { cancel_at, id, status, customer, items } = event.data
+    .object as Stripe.Subscription;
+  if (!items.data[0]) {
+    console.warn(`Subscription ${id} has no items, dates will not be updated.`);
+  }
+
+  const current_period_end = items.data[0]?.current_period_end;
+  const current_period_start = items.data[0]?.current_period_start;
 
   const subscription = await getBySubscriptionId(id);
   if (!subscription) {
@@ -114,8 +112,15 @@ async function handleSubscriptionUpdated(event: Stripe.Event) {
 }
 
 async function handleSubscriptionCreated(event: Stripe.Event) {
-  const { customer, id, current_period_start, current_period_end, items } =
-    event.data.object as Stripe.Subscription;
+  const { customer, id, items } = event.data.object as Stripe.Subscription;
+  const current_period_start = items.data[0]?.current_period_start;
+  const current_period_end = items.data[0]?.current_period_end;
+
+  if (current_period_start == null || current_period_end == null) {
+    throw new Error(
+      'Subscription missing current_period_start or current_period_end'
+    );
+  }
 
   await createStripeSubscription({
     customerId: customer as string,

@@ -73,7 +73,7 @@ const unAuthenticatedRoutes = [
   '/.well-known/*',
 ];
 
-export default async function middleware(req: NextRequest) {
+export default async function proxy(req: NextRequest) {
   const { pathname } = req.nextUrl;
 
   // Bypass routes that don't require authentication
