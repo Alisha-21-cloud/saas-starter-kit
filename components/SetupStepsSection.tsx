@@ -44,7 +44,8 @@ export default function SetupStepsSection() {
             From zero to production in minutes
           </h2>
           <p className="mt-4 text-base leading-7 text-theme-text-secondary">
-            The setup flow in the README breaks naturally into three steps: clone, configure, and deploy.
+            The setup flow in the README breaks naturally into three steps:
+            clone, configure, and deploy.
           </p>
         </motion.div>
 

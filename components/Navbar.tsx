@@ -1,7 +1,12 @@
 // Navbar component with logo, navigation links, and action buttons
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
+import {
+  motion,
+  AnimatePresence,
+  useScroll,
+  useTransform,
+} from 'framer-motion';
 import { Sparkles, ChevronDown, Menu, X, Sun, Moon } from 'lucide-react';
 import { navLinks } from '@/lib/constants';
 import { useTheme } from 'next-themes';
@@ -26,12 +31,16 @@ function ThemeToggle() {
     >
       <Sun
         className={`absolute h-[1.1rem] w-[1.1rem] transition-all duration-300 ${
-          resolvedTheme === 'dark' ? 'scale-0 opacity-0 rotate-90' : 'scale-100 opacity-100 rotate-0'
+          resolvedTheme === 'dark'
+            ? 'scale-0 opacity-0 rotate-90'
+            : 'scale-100 opacity-100 rotate-0'
         }`}
       />
       <Moon
         className={`absolute h-[1.1rem] w-[1.1rem] transition-all duration-300 ${
-          resolvedTheme === 'dark' ? 'scale-100 opacity-100 rotate-0' : 'scale-0 opacity-0 -rotate-90'
+          resolvedTheme === 'dark'
+            ? 'scale-100 opacity-100 rotate-0'
+            : 'scale-0 opacity-0 -rotate-90'
         }`}
       />
     </button>
@@ -188,7 +197,10 @@ export default function Navbar() {
                       className="flex items-center justify-between rounded-2xl border border-theme-border px-4 py-3 text-sm font-medium text-theme-text-primary transition-colors hover:bg-theme-bg-tertiary"
                     >
                       <span>{link.label}</span>
-                      <ChevronDown className="h-4 w-4 rotate-[-90deg] opacity-70" aria-hidden="true" />
+                      <ChevronDown
+                        className="h-4 w-4 rotate-[-90deg] opacity-70"
+                        aria-hidden="true"
+                      />
                     </a>
                   ) : (
                     <Link
@@ -198,7 +210,10 @@ export default function Navbar() {
                       className="flex items-center justify-between rounded-2xl border border-theme-border px-4 py-3 text-sm font-medium text-theme-text-primary transition-colors hover:bg-theme-bg-tertiary"
                     >
                       <span>{link.label}</span>
-                      <ChevronDown className="h-4 w-4 rotate-[-90deg] opacity-70" aria-hidden="true" />
+                      <ChevronDown
+                        className="h-4 w-4 rotate-[-90deg] opacity-70"
+                        aria-hidden="true"
+                      />
                     </Link>
                   )
                 )}

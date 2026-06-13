@@ -1,4 +1,3 @@
-
 # ⭐ Enterprise SaaS Starter Kit
 
 <p>
@@ -14,7 +13,6 @@ The Open Source Next.js SaaS boilerplate for Enterprise SaaS app development.
 Please star ⭐ the repo if you want us to continue developing and improving the SaaS Starter Kit! 😀
 
 ## 📖 Additional Resources
-
 
 Blog - Comming Soon
 
@@ -239,7 +237,6 @@ Please try to create bug reports that are:
 - _Scoped to a Single Bug._ One bug per report.
 
 [Contributing Guide](https://github.com/Alisha-21-cloud/saas-starter-kit/blob/main/CONTRIBUTING.md)
-
 
 ## 🛡️ License
 

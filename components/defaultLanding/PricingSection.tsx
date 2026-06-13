@@ -12,9 +12,7 @@ const PricingSection = () => {
         <h2 className="text-center text-4xl font-bold normal-case">
           {t('pricing')}
         </h2>
-        <p className="text-center text-xl">
-          Sample copy for pricing section.
-        </p>
+        <p className="text-center text-xl">Sample copy for pricing section.</p>
         <div className="flex items-center justify-center">
           <div className="grid grid-cols-1 gap-3 md:grid-cols-3">
             {plans.map((plan, index) => {

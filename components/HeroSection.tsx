@@ -16,10 +16,11 @@ export default function HeroSection() {
       className="flex flex-col items-start"
     >
       <motion.div variants={cardReveal}>
-        <span
-          className="inline-flex items-center gap-2 rounded-full border border-theme-border bg-theme-bg-secondary px-3 py-1.5 text-xs font-medium text-theme-text-secondary shadow-sm backdrop-blur"
-        >
-          <BadgeCheck className="h-4 w-4 text-theme-accent" aria-hidden="true" />
+        <span className="inline-flex items-center gap-2 rounded-full border border-theme-border bg-theme-bg-secondary px-3 py-1.5 text-xs font-medium text-theme-text-secondary shadow-sm backdrop-blur">
+          <BadgeCheck
+            className="h-4 w-4 text-theme-accent"
+            aria-hidden="true"
+          />
           Production-Ready
         </span>
       </motion.div>
@@ -70,7 +71,10 @@ export default function HeroSection() {
         <p>Trusted by developers at</p>
         <ul className="flex items-center gap-3">
           {['Vercel', 'Stripe', 'Supabase'].map((tag) => (
-            <li key={tag} className="rounded-full border border-theme-border bg-theme-bg-secondary px-3 py-1.5 backdrop-blur">
+            <li
+              key={tag}
+              className="rounded-full border border-theme-border bg-theme-bg-secondary px-3 py-1.5 backdrop-blur"
+            >
               {tag}
             </li>
           ))}

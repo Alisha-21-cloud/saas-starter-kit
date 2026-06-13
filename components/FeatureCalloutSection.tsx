@@ -50,7 +50,10 @@ export default function FeatureCalloutSection() {
                 Built to cover the boring parts
               </h2>
               <p className="mt-4 max-w-xl text-base leading-7 text-white/72 dark:text-theme-text-secondary">
-                The README does not list pricing tiers, so this section highlights the product defaults that matter most: auth, teams, billing, webhooks, audit logs, dark mode, E2E tests, Docker compose, Prisma Studio, and security headers.
+                The README does not list pricing tiers, so this section
+                highlights the product defaults that matter most: auth, teams,
+                billing, webhooks, audit logs, dark mode, E2E tests, Docker
+                compose, Prisma Studio, and security headers.
               </p>
             </div>
 
@@ -60,7 +63,10 @@ export default function FeatureCalloutSection() {
                   key={feature}
                   className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-medium text-white/88 backdrop-blur dark:border-theme-border dark:bg-theme-bg-primary dark:text-theme-text-secondary"
                 >
-                  <CheckCircle2 className="h-4 w-4 text-indigo-400 dark:text-theme-accent" aria-hidden="true" />
+                  <CheckCircle2
+                    className="h-4 w-4 text-indigo-400 dark:text-theme-accent"
+                    aria-hidden="true"
+                  />
                   {feature}
                 </div>
               ))}

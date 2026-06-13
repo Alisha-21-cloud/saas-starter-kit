@@ -1,5 +1,12 @@
 import { motion } from 'framer-motion';
-import { LockKeyhole, Users, Workflow, Webhook, BadgeCheck, Rocket } from 'lucide-react';
+import {
+  LockKeyhole,
+  Users,
+  Workflow,
+  Webhook,
+  BadgeCheck,
+  Rocket,
+} from 'lucide-react';
 import { staggerReveal, cardReveal } from '@/lib/motion';
 
 const featureCards = [
@@ -59,7 +66,8 @@ export default function FeaturesSection() {
             Everything you need to ship fast
           </h2>
           <p className="mt-4 text-base leading-7 text-theme-text-secondary">
-            The README’s capabilities are grouped below so the homepage can tell the full product story without inventing anything new.
+            The README’s capabilities are grouped below so the homepage can tell
+            the full product story without inventing anything new.
           </p>
         </motion.div>
 

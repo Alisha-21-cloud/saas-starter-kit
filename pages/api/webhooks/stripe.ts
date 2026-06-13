@@ -77,13 +77,8 @@ export default async function POST(req: NextApiRequest, res: NextApiResponse) {
 }
 
 async function handleSubscriptionUpdated(event: Stripe.Event) {
-  const {
-    cancel_at,
-    id,
-    status,
-    customer,
-    items,
-  } = event.data.object as Stripe.Subscription;
+  const { cancel_at, id, status, customer, items } = event.data
+    .object as Stripe.Subscription;
   if (!items.data[0]) {
     console.warn(`Subscription ${id} has no items, dates will not be updated.`);
   }
@@ -117,13 +112,14 @@ async function handleSubscriptionUpdated(event: Stripe.Event) {
 }
 
 async function handleSubscriptionCreated(event: Stripe.Event) {
-  const { customer, id, items } =
-    event.data.object as Stripe.Subscription;
+  const { customer, id, items } = event.data.object as Stripe.Subscription;
   const current_period_start = items.data[0]?.current_period_start;
   const current_period_end = items.data[0]?.current_period_end;
 
   if (current_period_start == null || current_period_end == null) {
-    throw new Error('Subscription missing current_period_start or current_period_end');
+    throw new Error(
+      'Subscription missing current_period_start or current_period_end'
+    );
   }
 
   await createStripeSubscription({

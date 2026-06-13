@@ -1,5 +1,18 @@
 import { motion } from 'framer-motion';
-import { Database, FileCode2, Sparkles, PanelTop, CheckCircle2, KeyRound, CreditCard, Webhook, ShieldAlert, TestTube2, Cloud, Workflow } from 'lucide-react';
+import {
+  Database,
+  FileCode2,
+  Sparkles,
+  PanelTop,
+  CheckCircle2,
+  KeyRound,
+  CreditCard,
+  Webhook,
+  ShieldAlert,
+  TestTube2,
+  Cloud,
+  Workflow,
+} from 'lucide-react';
 import { staggerReveal, cardReveal } from '@/lib/motion';
 
 const techStack = [
@@ -38,7 +51,9 @@ export default function TechStackSection() {
             </h2>
           </div>
           <p className="max-w-xl text-sm leading-6 text-theme-text-secondary">
-            Next.js, Tailwind CSS, Postgres, React, Prisma, TypeScript, SAML Jackson, Svix, Retraced, Stripe, Playwright, Docker, and NextAuth.js are all called out in the project README.
+            Next.js, Tailwind CSS, Postgres, React, Prisma, TypeScript, SAML
+            Jackson, Svix, Retraced, Stripe, Playwright, Docker, and NextAuth.js
+            are all called out in the project README.
           </p>
         </motion.div>
 

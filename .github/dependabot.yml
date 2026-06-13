@@ -6,56 +6,56 @@
 version: 2
 updates:
   # JavaScript / Node.js dependencies
-  - package-ecosystem: "npm"
-    directory: "/"
+  - package-ecosystem: 'npm'
+    directory: '/'
     schedule:
-      interval: "weekly"
-      day: "monday"
-      time: "09:00"
+      interval: 'weekly'
+      day: 'monday'
+      time: '09:00'
     open-pull-requests-limit: 10
     reviewers:
-      - "Alisha-21-cloud"
+      - 'Alisha-21-cloud'
     labels:
-      - "dependencies"
+      - 'dependencies'
     groups:
       typescript-eslint:
         patterns:
-          - "@typescript-eslint/*"
+          - '@typescript-eslint/*'
       react-email:
         patterns:
-          - "@react-email/*"
-          - "react-email"
+          - '@react-email/*'
+          - 'react-email'
       next:
         patterns:
-          - "next"
-          - "eslint-config-next"
+          - 'next'
+          - 'eslint-config-next'
       prisma:
         patterns:
-          - "@prisma/client"
-          - "prisma"
+          - '@prisma/client'
+          - 'prisma'
 
   # Python dependencies
-  - package-ecosystem: "pip"
-    directory: "/"
+  - package-ecosystem: 'pip'
+    directory: '/'
     schedule:
-      interval: "weekly"
-      day: "monday"
-      time: "09:00"
+      interval: 'weekly'
+      day: 'monday'
+      time: '09:00'
     open-pull-requests-limit: 10
     reviewers:
-      - "Alisha-21-cloud"
+      - 'Alisha-21-cloud'
     labels:
-      - "dependencies"
+      - 'dependencies'
 
   # GitHub Actions
-  - package-ecosystem: "github-actions"
-    directory: "/"
+  - package-ecosystem: 'github-actions'
+    directory: '/'
     schedule:
-      interval: "weekly"
-      day: "monday"
-      time: "09:00"
+      interval: 'weekly'
+      day: 'monday'
+      time: '09:00'
     open-pull-requests-limit: 10
     reviewers:
-      - "Alisha-21-cloud"
+      - 'Alisha-21-cloud'
     labels:
-      - "dependencies"
+      - 'dependencies'

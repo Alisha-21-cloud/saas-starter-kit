@@ -1,6 +1,13 @@
 // The right-side floating card showing Starter Kit coverage features
 import { motion } from 'framer-motion';
-import { LockKeyhole, Users, Webhook, Rocket, Sparkles, ShieldCheck } from 'lucide-react';
+import {
+  LockKeyhole,
+  Users,
+  Webhook,
+  Rocket,
+  Sparkles,
+  ShieldCheck,
+} from 'lucide-react';
 import FeatureTile from './FeatureTile';
 
 const features = [
@@ -70,11 +77,15 @@ export default function StarterKitCard() {
                     Ready to extend
                   </p>
                   <p className="mt-1 text-sm text-theme-text-secondary">
-                    The boring parts are already wired so the product can start at the interesting part.
+                    The boring parts are already wired so the product can start
+                    at the interesting part.
                   </p>
                 </div>
                 <div className="hidden items-center gap-2 rounded-full border border-theme-border bg-theme-bg-primary px-3 py-2 text-xs font-semibold text-theme-text-secondary sm:flex">
-                  <ShieldCheck className="h-4 w-4 text-theme-accent" aria-hidden="true" />
+                  <ShieldCheck
+                    className="h-4 w-4 text-theme-accent"
+                    aria-hidden="true"
+                  />
                   Enterprise defaults
                 </div>
               </div>

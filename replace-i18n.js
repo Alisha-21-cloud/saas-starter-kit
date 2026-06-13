@@ -9,12 +9,13 @@ function walk(dir, callback) {
     console.warn(`Skipping directory ${dir}: ${err.message}`);
     return;
   }
-  files.forEach(f => {
+  files.forEach((f) => {
     const dirPath = path.join(dir, f);
     try {
       const isDirectory = fs.statSync(dirPath).isDirectory();
       if (isDirectory) {
-        if (f !== 'node_modules' && f !== '.next' && f !== '.git') walk(dirPath, callback);
+        if (f !== 'node_modules' && f !== '.next' && f !== '.git')
+          walk(dirPath, callback);
       } else {
         callback(dirPath);
       }
@@ -31,18 +32,34 @@ walk('.', (filePath) => {
 
     // Replace next-i18next/serverSideTranslations
     if (content.includes("'next-i18next/serverSideTranslations'")) {
-      content = content.replace(/'next-i18next\/serverSideTranslations'/g, "'next-i18next/pages/serverSideTranslations'");
+      content = content.replace(
+        /'next-i18next\/serverSideTranslations'/g,
+        "'next-i18next/pages/serverSideTranslations'"
+      );
       changed = true;
     }
     if (content.includes('"next-i18next/serverSideTranslations"')) {
-      content = content.replace(/"next-i18next\/serverSideTranslations"/g, '"next-i18next/pages/serverSideTranslations"');
+      content = content.replace(
+        /"next-i18next\/serverSideTranslations"/g,
+        '"next-i18next/pages/serverSideTranslations"'
+      );
       changed = true;
     }
 
     // Replace next-i18next
-    if (content.match(/import\s+{.*(useTranslation|appWithTranslation|Trans).*}\s+from\s+['"]next-i18next['"]/)) {
-      content = content.replace(/from\s+'next-i18next'/g, "from 'next-i18next/pages'");
-      content = content.replace(/from\s+"next-i18next"/g, 'from "next-i18next/pages"');
+    if (
+      content.match(
+        /import\s+{.*(useTranslation|appWithTranslation|Trans).*}\s+from\s+['"]next-i18next['"]/
+      )
+    ) {
+      content = content.replace(
+        /from\s+'next-i18next'/g,
+        "from 'next-i18next/pages'"
+      );
+      content = content.replace(
+        /from\s+"next-i18next"/g,
+        'from "next-i18next/pages"'
+      );
       changed = true;
     }
 
