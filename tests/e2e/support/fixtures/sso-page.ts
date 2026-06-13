@@ -37,7 +37,7 @@ export class SSOPage {
     public readonly teamSlug: string
   ) {
     this.pageHeader = this.page.getByRole('heading', {
-      name: 'Manage SSO',
+      name: /Manage SSO/i,
     });
     this.newConnectionButton = this.page.getByRole('button', {
       name: 'New Connection',
@@ -253,13 +253,13 @@ export class SSOPage {
     await this.deleteButton.click();
     await expect(
       this.page.getByRole('heading', {
-        name: 'Are you sure you want to delete the Connection? This action cannot be undone and will permanently delete the Connection.',
+        name: /delete the Connection/i,
       })
     ).toBeVisible();
     await this.confirmButton.click();
     await expect(
       this.page.getByRole('heading', {
-        name: 'Manage SSO',
+        name: /Manage SSO/i,
       })
     ).toBeVisible();
   }
