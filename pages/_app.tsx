@@ -14,9 +14,12 @@ import { useEffect } from 'react';
 import env from '@/lib/env';
 import { Theme, applyTheme } from '@/lib/theme';
 import dynamic from 'next/dynamic';
-
-import { Themer } from '@boxyhq/react-ui/shared';
 import { AccountLayout } from '@/components/layouts';
+
+const DynamicThemer = dynamic(
+  () => import('@boxyhq/react-ui/shared').then((mod) => mod.Themer),
+  { ssr: false }
+);
 
 function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   const { session, ...props } = pageProps;
@@ -48,7 +51,7 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
       <SessionProvider session={session}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Toaster toastOptions={{ duration: 4000 }} />
-          <Themer
+          <DynamicThemer
             overrideTheme={{
               '--primary-color': colors.blue['500'],
               '--primary-hover': colors.blue['600'],
@@ -64,8 +67,9 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
               '--primary-color-950': colors.blue['950'],
             }}
           >
-            {getLayout(<Component {...props} />)}
-          </Themer>
+            {null}
+          </DynamicThemer>
+          {getLayout(<Component {...props} />)}
         </ThemeProvider>
       </SessionProvider>
     </>

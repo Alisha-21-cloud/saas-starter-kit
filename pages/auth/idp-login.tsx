@@ -24,3 +24,9 @@ export default function SAMLIdPLogin() {
 SAMLIdPLogin.getLayout = function getLayout(page: ReactElement) {
   return <>{page}</>;
 };
+
+export const getServerSideProps = async () => {
+  return {
+    props: {},
+  };
+};
