@@ -85,6 +85,10 @@ async function handleSubscriptionUpdated(event: Stripe.Event) {
     customer,
     items,
   } = event.data.object as Stripe.Subscription;
+  if (!items.data[0]) {
+    console.warn(`Subscription ${id} has no items, dates will not be updated.`);
+  }
+
   const current_period_end = items.data[0]?.current_period_end;
   const current_period_start = items.data[0]?.current_period_start;
 
@@ -116,8 +120,12 @@ async function handleSubscriptionUpdated(event: Stripe.Event) {
 async function handleSubscriptionCreated(event: Stripe.Event) {
   const { customer, id, items } =
     event.data.object as Stripe.Subscription;
-  const current_period_start = items.data[0]?.current_period_start ?? 0;
-  const current_period_end = items.data[0]?.current_period_end ?? 0;
+  const current_period_start = items.data[0]?.current_period_start;
+  const current_period_end = items.data[0]?.current_period_end;
+
+  if (current_period_start == null || current_period_end == null) {
+    throw new Error('Subscription missing current_period_start or current_period_end');
+  }
 
   await createStripeSubscription({
     customerId: customer as string,

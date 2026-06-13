@@ -53,13 +53,6 @@ const nextConfig = {
   },
 };
 
-// Additional config options for the Sentry webpack plugin.
-// For all available options: https://github.com/getsentry/sentry-webpack-plugin#options.
-const sentryWebpackPluginOptions = {
-  silent: true,
-  hideSourceMaps: true,
-};
-
 module.exports = withSentryConfig(nextConfig, {
   org: process.env.SENTRY_ORG,
   project: process.env.SENTRY_PROJECT,
@@ -68,4 +61,5 @@ module.exports = withSentryConfig(nextConfig, {
   // Disable source map upload locally if you don't have an auth token set
   disableServerWebpackPlugin: !process.env.SENTRY_AUTH_TOKEN,
   disableClientWebpackPlugin: !process.env.SENTRY_AUTH_TOKEN,
+  hideSourceMaps: true,
 });

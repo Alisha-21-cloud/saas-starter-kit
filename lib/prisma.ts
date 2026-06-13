@@ -9,16 +9,17 @@ declare global {
   var prisma: PrismaClient | undefined;
 }
 
-const connectionString = env.databaseUrl;
-const pool = new Pool({ connectionString });
-const adapter = new PrismaPg(pool);
-
 export const prisma =
   global.prisma ||
-  new PrismaClient({
-    adapter,
-    //log: ["error"],
-  });
+  (() => {
+    const connectionString = env.databaseUrl;
+    const pool = new Pool({ connectionString });
+    const adapter = new PrismaPg(pool);
+    return new PrismaClient({
+      adapter,
+      //log: ["error"],
+    });
+  })();
 
 if (process.env.NODE_ENV !== 'production') {
   global.prisma = prisma;
