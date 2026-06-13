@@ -8,11 +8,10 @@ import Link from 'next/link';
 import { useFormik } from 'formik';
 import { Button } from 'react-daisyui';
 import { useRouter } from 'next/router';
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from 'next-i18next/pages';
 import React, { type ReactElement, useEffect, useState, useRef } from 'react';
-import type { ComponentStatus } from 'react-daisyui/dist/types';
 import { getCsrfToken, signIn, useSession } from 'next-auth/react';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { serverSideTranslations } from 'next-i18next/pages/serverSideTranslations';
 
 import env from '@/lib/env';
 import type { NextPageWithLayout } from 'types';
@@ -30,7 +29,7 @@ import { maxLengthPolicies } from '@/lib/common';
 
 interface Message {
   text: string | null;
-  status: ComponentStatus | null;
+  status: 'info' | 'success' | 'warning' | 'error' | null;
 }
 
 const Login: NextPageWithLayout<

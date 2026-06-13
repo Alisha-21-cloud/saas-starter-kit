@@ -1,7 +1,7 @@
 import { InputWithLabel } from '@/components/shared';
 import type { FormikConfig } from 'formik';
 import { useFormik } from 'formik';
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from 'next-i18next/pages';
 import React from 'react';
 import { Button } from 'react-daisyui';
 import type { WebhookFormSchema } from 'types';

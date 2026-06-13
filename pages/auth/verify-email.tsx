@@ -1,6 +1,6 @@
 import { AuthLayout } from '@/components/layouts';
 import { GetServerSidePropsContext } from 'next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { serverSideTranslations } from 'next-i18next/pages/serverSideTranslations';
 import type { ReactElement } from 'react';
 
 const VerifyEmail = () => {

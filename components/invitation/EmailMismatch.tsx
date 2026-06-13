@@ -1,5 +1,5 @@
 import { Button } from 'react-daisyui';
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from 'next-i18next/pages';
 import { useCustomSignOut } from 'hooks/useCustomSignout';
 
 interface EmailMismatchProps {

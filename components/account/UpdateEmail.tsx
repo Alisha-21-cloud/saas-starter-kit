@@ -1,6 +1,6 @@
 import { useFormik } from 'formik';
 import toast from 'react-hot-toast';
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from 'next-i18next/pages';
 import { Button, Input } from 'react-daisyui';
 
 import type { ApiResponse } from 'types';

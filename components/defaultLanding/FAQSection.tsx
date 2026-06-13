@@ -1,4 +1,4 @@
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from 'next-i18next/pages';
 import { Card } from 'react-daisyui';
 
 import faqs from './data/faq.json';

@@ -1,5 +1,5 @@
 import { Button, Modal as DModal } from 'react-daisyui';
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from 'next-i18next/pages';
 
 interface ModalProps {
   open: boolean;

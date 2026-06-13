@@ -2,7 +2,7 @@ import React, { ReactElement } from 'react';
 import { AccountLayout } from '@/components/layouts';
 import { useTranslation } from 'react-i18next';
 import { GetServerSidePropsContext } from 'next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { serverSideTranslations } from 'next-i18next/pages/serverSideTranslations';
 import Link from 'next/link';
 import router from 'next/router';
 

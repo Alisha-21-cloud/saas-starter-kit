@@ -5,7 +5,7 @@ import type {
   InferGetServerSidePropsType,
 } from 'next';
 import { getCsrfToken } from 'next-auth/react';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { serverSideTranslations } from 'next-i18next/pages/serverSideTranslations';
 import type { ReactElement } from 'react';
 import type { NextPageWithLayout } from 'types';
 

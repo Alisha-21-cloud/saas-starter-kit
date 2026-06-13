@@ -4,7 +4,7 @@ import {
   SunIcon,
 } from '@heroicons/react/24/outline';
 import { useEffect, useState } from 'react';
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from 'next-i18next/pages';
 
 import { ThemesProps, applyTheme } from '@/lib/theme';
 

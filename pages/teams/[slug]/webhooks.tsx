@@ -3,8 +3,8 @@ import { TeamTab } from '@/components/team';
 import { Webhooks } from '@/components/webhook';
 import useTeam from 'hooks/useTeam';
 import { GetServerSidePropsContext } from 'next';
-import { useTranslation } from 'next-i18next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next/pages';
+import { serverSideTranslations } from 'next-i18next/pages/serverSideTranslations';
 import env from '@/lib/env';
 
 const WebhookList = ({ teamFeatures }) => {

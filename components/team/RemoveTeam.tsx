@@ -1,6 +1,6 @@
 import { Card } from '@/components/shared';
 import { Team } from '@prisma/client';
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from 'next-i18next/pages';
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';
 import { Button } from 'react-daisyui';

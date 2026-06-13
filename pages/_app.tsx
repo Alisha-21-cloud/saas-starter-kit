@@ -1,6 +1,6 @@
 import app from '@/lib/app';
 import { SessionProvider } from 'next-auth/react';
-import { appWithTranslation } from 'next-i18next';
+import { appWithTranslation } from 'next-i18next/pages';
 import Head from 'next/head';
 import { Toaster } from 'react-hot-toast';
 import colors from 'tailwindcss/colors';
@@ -13,7 +13,15 @@ import '../styles/globals.css';
 import { useEffect } from 'react';
 import env from '@/lib/env';
 import { Theme, applyTheme } from '@/lib/theme';
-import { Themer } from '@boxyhq/react-ui/shared';
+import dynamic from 'next/dynamic';
+
+// TODO: Remove ssr:false when @boxyhq/react-ui ships React 19 SSR support
+// Last checked: 2026-06-13, version 3.5.3
+// Functional impact: SSO and Directory Sync wrappers render client-side only
+const Themer = dynamic(
+  () => import('@boxyhq/react-ui/shared').then((mod) => mod.Themer),
+  { ssr: false }
+);
 import { AccountLayout } from '@/components/layouts';
 
 function MyApp({ Component, pageProps }: AppPropsWithLayout) {
